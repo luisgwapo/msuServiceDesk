@@ -11,6 +11,9 @@ import StatsCard from './Cards/StatsCard.vue'
 
 import SidebarPlugin from './SidebarPlugin'
 
+import RequestTable from './RequestTable.vue'
+import AccountsTable from './AccountsTable.vue'
+
 let components = {
   BaseCheckbox,
   Radio,
@@ -20,7 +23,9 @@ let components = {
   StatsCard,
   Table,
   BaseDropdown,
-  SidebarPlugin
+  SidebarPlugin,
+  RequestTable,
+  AccountsTable
 }
 
 export default components

@@ -28,6 +28,14 @@ import './registerServiceWorker'
 Vue.use(VueRouter)
 Vue.use(LightBootstrap)
 
+import axios from 'axios'
+
+const base = axios.create({
+  baseURL: 'http://localhost:3000'
+});
+
+Vue.prototype.$axios = base; 
+
 // configure router
 const router = new VueRouter({
   routes, // short for routes: routes
