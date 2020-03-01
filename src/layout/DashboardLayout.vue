@@ -3,10 +3,11 @@
     <side-bar>
    
      
-      <sidebar-link to="/admin/accounts">
+      <sidebar-link v-if="role === 'Admin'" to="/admin/accounts">
         <i class="nc-icon nc-circle-09"></i>
         <p>Accounts</p>
       </sidebar-link>
+
       <sidebar-link to="/admin/requests">
         <i class="nc-icon nc-notes"></i>
         <p>Requests</p>
@@ -29,10 +30,14 @@
   import TopNavbar from './TopNavbar.vue'
   import DashboardContent from './Content.vue'
   export default {
+    data() {
+      return {
+        role: null,
+      } 
+    },
     created() {
-    if(!localStorage.token || localStorage.role !== 'Admin'){
-      this.$router.push("/");
-    }
+      this.role = localStorage.role
+     
     },
 
     components: {

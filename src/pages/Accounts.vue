@@ -11,6 +11,12 @@
  
   import AccountsTable from 'src/components/AccountsTable.vue'
   export default {
+    created() {
+      if(localStorage.role !== 'Admin'){
+      this.$router.push("/");
+    }
+    },
+
     components: {
       AccountsTable
     }

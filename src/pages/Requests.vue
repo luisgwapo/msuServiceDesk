@@ -11,6 +11,12 @@
    import RequestTable from 'src/components/RequestTable.vue'
 
   export default {
+
+    created() {
+      if(localStorage.role === 'Requester'){
+      this.$router.push("/");
+    }
+    },
     components: {
       RequestTable
     }

@@ -78,8 +78,18 @@
           localStorage.token = res.data.token
           localStorage.id = res.data.id      
           localStorage.role = res.data.role    
-          console.log(localStorage)
-          this.$router.push("/admin");
+       
+
+          if(res.data.role === 'Admin'){
+          this.$router.push("/admin")
+          } else if(res.data.role === 'Requester'){
+          this.$router.push("/requester")
+          } else if(res.data.role === 'Engineer'){
+            this.$router.push("/engineer")
+          }
+          else if(res.data.role === 'Worker'){
+            this.$router.push("/worker")
+          }
         }
 
 
